@@ -48,6 +48,14 @@
 #undef GNULIB_CANONICALIZE_LGPL
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
+   whether the gnulib module fscanf shall be considered present. */
+#undef GNULIB_FSCANF
+
+/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
+   whether the gnulib module scanf shall be considered present. */
+#undef GNULIB_SCANF
+
+/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module sigpipe shall be considered present. */
 #undef GNULIB_SIGPIPE
 
@@ -64,6 +72,9 @@
 
 /* Define to 1 when the gnulib module lstat should be tested. */
 #undef GNULIB_TEST_LSTAT
+
+/* Define to 1 when the gnulib module raise should be tested. */
+#undef GNULIB_TEST_RAISE
 
 /* Define to 1 when the gnulib module read should be tested. */
 #undef GNULIB_TEST_READ
@@ -93,11 +104,11 @@
 /* Define to 1 if you have the `canonicalize_file_name' function. */
 #undef HAVE_CANONICALIZE_FILE_NAME
 
-/* Define to 1 if you have the MacOS X function CFLocaleCopyCurrent in the
+/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
    CoreFoundation framework. */
 #undef HAVE_CFLOCALECOPYCURRENT
 
-/* Define to 1 if you have the MacOS X function CFPreferencesCopyAppValue in
+/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
    the CoreFoundation framework. */
 #undef HAVE_CFPREFERENCESCOPYAPPVALUE
 
@@ -197,7 +208,7 @@
 /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
 #undef HAVE_LANGINFO_CODESET
 
-/* Define to 1 if the system has the type `long long int'. */
+/* Define to 1 if the system has the type 'long long int'. */
 #undef HAVE_LONG_LONG_INT
 
 /* Define to 1 if you have the `lstat' function. */
@@ -221,6 +232,13 @@
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
 
+/* Define to 1 on MSVC platforms that have the "invalid parameter handler"
+   concept. */
+#undef HAVE_MSVC_INVALID_PARAMETER_HANDLER
+
+/* Define to 1 if you have the `raise' function. */
+#undef HAVE_RAISE
+
 /* Define to 1 if atoll is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_ATOLL
 
@@ -228,11 +246,17 @@
    macros. */
 #undef HAVE_RAW_DECL_CANONICALIZE_FILE_NAME
 
+/* Define to 1 if chdir is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_CHDIR
+
 /* Define to 1 if chown is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_CHOWN
 
 /* Define to 1 if dprintf is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_DPRINTF
+
+/* Define to 1 if dup is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_DUP
 
 /* Define to 1 if dup2 is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_DUP2
@@ -264,6 +288,9 @@
 /* Define to 1 if fcntl is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_FCNTL
 
+/* Define to 1 if fdatasync is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_FDATASYNC
+
 /* Define to 1 if ffsl is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_FFSL
 
@@ -275,6 +302,9 @@
 
 /* Define to 1 if fseeko is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_FSEEKO
+
+/* Define to 1 if fstat is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_FSTAT
 
 /* Define to 1 if fstatat is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_FSTATAT
@@ -324,6 +354,9 @@
 /* Define to 1 if getpagesize is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_GETPAGESIZE
 
+/* Define to 1 if gets is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_GETS
+
 /* Define to 1 if getsubopt is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_GETSUBOPT
 
@@ -336,8 +369,14 @@
 /* Define to 1 if group_member is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_GROUP_MEMBER
 
-/* Define to 1 if initstat_r is declared even after undefining macros. */
-#undef HAVE_RAW_DECL_INITSTAT_R
+/* Define to 1 if initstate is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_INITSTATE
+
+/* Define to 1 if initstate_r is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_INITSTATE_R
+
+/* Define to 1 if isatty is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_ISATTY
 
 /* Define to 1 if lchmod is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_LCHMOD
@@ -399,6 +438,9 @@
 /* Define to 1 if openat is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_OPENAT
 
+/* Define to 1 if pclose is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_PCLOSE
+
 /* Define to 1 if pipe is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_PIPE
 
@@ -407,6 +449,9 @@
 
 /* Define to 1 if popen is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_POPEN
+
+/* Define to 1 if posix_openpt is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_POSIX_OPENPT
 
 /* Define to 1 if pread is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_PREAD
@@ -417,8 +462,14 @@
 /* Define to 1 if ptsname is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_PTSNAME
 
+/* Define to 1 if ptsname_r is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_PTSNAME_R
+
 /* Define to 1 if pwrite is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_PWRITE
+
+/* Define to 1 if random is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_RANDOM
 
 /* Define to 1 if random_r is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_RANDOM_R
@@ -446,6 +497,12 @@
 
 /* Define to 1 if setenv is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_SETENV
+
+/* Define to 1 if sethostname is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_SETHOSTNAME
+
+/* Define to 1 if setstate is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_SETSTATE
 
 /* Define to 1 if setstate_r is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_SETSTATE_R
@@ -482,6 +539,9 @@
 
 /* Define to 1 if snprintf is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_SNPRINTF
+
+/* Define to 1 if srandom is declared even after undefining macros. */
+#undef HAVE_RAW_DECL_SRANDOM
 
 /* Define to 1 if srandom_r is declared even after undefining macros. */
 #undef HAVE_RAW_DECL_SRANDOM_R
@@ -651,7 +711,7 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
-/* Define to 1 if the system has the type `unsigned long long int'. */
+/* Define to 1 if the system has the type 'unsigned long long int'. */
 #undef HAVE_UNSIGNED_LONG_LONG_INT
 
 /* Define to 1 or 0, depending whether the compiler supports simple visibility
@@ -682,13 +742,16 @@
 /* Define to 1 if you have the `_NSGetExecutablePath' function. */
 #undef HAVE__NSGETEXECUTABLEPATH
 
+/* Define to 1 if you have the `_set_invalid_parameter_handler' function. */
+#undef HAVE__SET_INVALID_PARAMETER_HANDLER
+
 /* Define as const if the declaration of iconv() needs const. */
 #undef ICONV_CONST
 
 /* Define to the value of ${prefix}, as a string. */
 #undef INSTALLPREFIX
 
-/* Define to 1 if `lstat' dereferences a symlink specified with a trailing
+/* Define to 1 if 'lstat' dereferences a symlink specified with a trailing
    slash. */
 #undef LSTAT_FOLLOWS_SLASHED_SYMLINK
 
@@ -789,15 +852,31 @@
 /* Define if the machine's byte ordering is little endian. */
 #undef WORDS_LITTLEENDIAN
 
+/* Enable large inode numbers on Mac OS X 10.5.  */
+#ifndef _DARWIN_USE_64_BIT_INODE
+# define _DARWIN_USE_64_BIT_INODE 1
+#endif
+
+/* Number of bits in a file offset, on hosts where this is settable. */
+#undef _FILE_OFFSET_BITS
+
+/* Define to 1 if Gnulib overrides 'struct stat' on Windows so that struct
+   stat.st_size becomes 64-bit. */
+#undef _GL_WINDOWS_64_BIT_ST_SIZE
+
+/* Define for large files, on AIX-style hosts. */
+#undef _LARGE_FILES
+
 /* Define to 1 if on MINIX. */
 #undef _MINIX
 
-/* The _Noreturn keyword of draft C1X.  */
-#ifndef _Noreturn
+/* The _Noreturn keyword of C11.  */
+#if ! (defined _Noreturn \
+       || (defined __STDC_VERSION__ && 201112 <= __STDC_VERSION__))
 # if (3 <= __GNUC__ || (__GNUC__ == 2 && 8 <= __GNUC_MINOR__) \
       || 0x5110 <= __SUNPRO_C)
 #  define _Noreturn __attribute__ ((__noreturn__))
-# elif 1200 <= _MSC_VER
+# elif defined _MSC_VER && 1200 <= _MSC_VER
 #  define _Noreturn __declspec (noreturn)
 # else
 #  define _Noreturn
@@ -809,7 +888,7 @@
    this defined. */
 #undef _POSIX_1_SOURCE
 
-/* Define to 1 if you need to in order for `stat' and other things to work. */
+/* Define to 1 if you need to in order for 'stat' and other things to work. */
 #undef _POSIX_SOURCE
 
 /* Define to 500 only on HP-UX. */
@@ -819,7 +898,7 @@
 #ifndef _ALL_SOURCE
 # undef _ALL_SOURCE
 #endif
-/* Enable general extensions on MacOS X.  */
+/* Enable general extensions on Mac OS X.  */
 #ifndef _DARWIN_C_SOURCE
 # undef _DARWIN_C_SOURCE
 #endif
@@ -853,7 +932,7 @@
 /* Work around a bug in Apple GCC 4.0.1 build 5465: In C99 mode, it supports
    the ISO C 99 semantics of 'extern inline' (unlike the GNU C semantics of
    earlier versions), but does not display it by setting __GNUC_STDC_INLINE__.
-   __APPLE__ && __MACH__ test for MacOS X.
+   __APPLE__ && __MACH__ test for Mac OS X.
    __APPLE_CC__ tests for the Apple compiler and its version.
    __STDC_VERSION__ tests for the C99 mode.  */
 #if defined __APPLE__ && defined __MACH__ && __APPLE_CC__ >= 5465 && !defined __cplusplus && __STDC_VERSION__ >= 199901L && !defined __GNUC_STDC_INLINE__
@@ -863,8 +942,14 @@
 /* Define to a type if <wchar.h> does not define. */
 #undef mbstate_t
 
+/* Define to `int' if <sys/types.h> does not define. */
+#undef mode_t
+
 /* Define to the type of st_nlink in struct stat, or a supertype. */
 #undef nlink_t
+
+/* Define to `int' if <sys/types.h> does not define. */
+#undef pid_t
 
 /* Define to the equivalent of the C99 'restrict' keyword, or to
    nothing if this is not supported.  Do not define if restrict is
